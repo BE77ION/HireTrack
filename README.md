@@ -110,7 +110,7 @@ http://localhost:5173
 
 ## 👤 Author
 
-**Pawandeep** — B.Tech 2026 | [GitHub](https://github.com/YOUR_USERNAME) | [LinkedIn](https://linkedin.com/in/YOUR_PROFILE)
+**Pawandeep** — B.Tech 2026 | [GitHub](https://github.com/BE77ION) | [LinkedIn](https://linkedin.com/in/Pawan2003)
 
 ---
 
