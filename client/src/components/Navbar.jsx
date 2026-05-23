@@ -45,7 +45,7 @@ export default function Navbar() {
 
       <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
         <span style={{ fontSize: "0.85rem", color: "var(--muted)" }}>
-          👋 {user?.name}
+          {user?.name}
         </span>
         <button onClick={logout} style={{
           display: "flex", alignItems: "center", gap: "0.3rem",

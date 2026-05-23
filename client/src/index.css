@@ -1,21 +1,21 @@
 :root {
-  --bg: #0a0a0f;
-  --surface: #111118;
-  --surface2: #1a1a24;
-  --border: #2a2a3a;
-  --accent: #6ee7b7;
-  --accent2: #818cf8;
-  --text: #f0f0f8;
-  --muted: #6b7280;
-  --danger: #f87171;
-  --warning: #fbbf24;
-  --success: #6ee7b7;
+  --bg:       #0e0d0b;
+  --surface:  #171512;
+  --surface2: #1f1d19;
+  --border:   #2d2a24;
+  --accent:   #e8a020;
+  --accent2:  #b07ef8;
+  --text:     #f0ebe0;
+  --muted:    #78726a;
+  --danger:   #e85555;
+  --warning:  #f59e0b;
+  --success:  #e8a020;
 
-  --status-applied: #818cf8;
-  --status-oa: #fbbf24;
-  --status-interview: #38bdf8;
-  --status-offer: #6ee7b7;
-  --status-rejected: #f87171;
+  --status-applied:   #60a5fa;
+  --status-oa:        #fb923c;
+  --status-interview: #c084fc;
+  --status-offer:     #4ade80;
+  --status-rejected:  #e85555;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,7 +23,7 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Figtree', sans-serif;
   min-height: 100vh;
 }
 
@@ -31,7 +31,7 @@ body {
 ::-webkit-scrollbar-track { background: var(--surface); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
-button { cursor: pointer; font-family: 'Syne', sans-serif; }
-input, select, textarea { font-family: 'Syne', sans-serif; }
+button { cursor: pointer; font-family: 'Figtree', sans-serif; }
+input, select, textarea { font-family: 'Figtree', sans-serif; }
 
 .mono { font-family: 'Space Mono', monospace; }

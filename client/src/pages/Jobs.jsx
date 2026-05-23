@@ -3,11 +3,11 @@ import axios from "axios";
 import { Plus, Pencil, Trash2, ExternalLink, X, Search } from "lucide-react";
 
 const STATUS_COLORS = {
-  Applied: "#818cf8",
-  OA: "#fbbf24",
-  Interview: "#38bdf8",
-  Offer: "#6ee7b7",
-  Rejected: "#f87171",
+  Applied:   "#60a5fa",
+  OA:        "#fb923c",
+  Interview: "#c084fc",
+  Offer:     "#4ade80",
+  Rejected:  "#e85555",
 };
 
 const STATUSES = ["Applied", "OA", "Interview", "Offer", "Rejected"];
@@ -59,8 +59,12 @@ export default function Jobs() {
 
   const handleDelete = async (id) => {
     if (!confirm("Delete this application?")) return;
-    await axios.delete(`/api/jobs/${id}`);
-    fetchJobs();
+    try {
+      await axios.delete(`/api/jobs/${id}`);
+      fetchJobs();
+    } catch (err) {
+      alert(err.response?.data?.message || "Failed to delete");
+    }
   };
 
   const filtered = jobs.filter(j => {

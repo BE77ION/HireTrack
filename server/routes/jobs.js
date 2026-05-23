@@ -3,6 +3,21 @@ const Job = require("../models/Job");
 const auth = require("../middleware/auth");
 const router = express.Router();
 
+// Stats for dashboard — must be BEFORE /:id so Express doesn't swallow it
+router.get("/stats", auth, async (req, res) => {
+  try {
+    const jobs = await Job.find({ user: req.userId });
+    const stats = {
+      total: jobs.length,
+      Applied: 0, OA: 0, Interview: 0, Offer: 0, Rejected: 0,
+    };
+    jobs.forEach((j) => stats[j.status]++);
+    res.json(stats);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 // Get all jobs for logged-in user
 router.get("/", auth, async (req, res) => {
   try {
@@ -44,21 +59,6 @@ router.delete("/:id", auth, async (req, res) => {
     const job = await Job.findOneAndDelete({ _id: req.params.id, user: req.userId });
     if (!job) return res.status(404).json({ message: "Job not found" });
     res.json({ message: "Deleted successfully" });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-// Stats for dashboard
-router.get("/stats", auth, async (req, res) => {
-  try {
-    const jobs = await Job.find({ user: req.userId });
-    const stats = {
-      total: jobs.length,
-      Applied: 0, OA: 0, Interview: 0, Offer: 0, Rejected: 0,
-    };
-    jobs.forEach((j) => stats[j.status]++);
-    res.json(stats);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
