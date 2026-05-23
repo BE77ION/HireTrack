@@ -15,7 +15,18 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/jobs", jobRoutes);
 
-app.get("/", (req, res) => res.send("HireTrack API running"));
+const path = require("path");
+
+// Serve static assets in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/dist")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client", "dist", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => res.send("HireTrack API running"));
+}
+
 
 // Connect to MongoDB and start server
 mongoose
