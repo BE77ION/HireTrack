@@ -2,6 +2,8 @@
 
 A modern, full-stack MERN application designed to track placement and internship applications. Built for students navigating campus placement seasons, HireTrack features a premium warm-dark dashboard, interactive status analytics, and real-time application tracking.
 
+### 🌐 Live Demo → [hiretrack-70sl.onrender.com](https://hiretrack-70sl.onrender.com)
+
 ---
 
 ## 🚀 Key Features
@@ -117,6 +119,10 @@ Visit `http://localhost:5173` to experience HireTrack!
 ## 📸 Screenshots
 
 > *Dashboard analytics showing application status counts, glowing linear gradient charts, recent jobs preview list, and the add/edit modal form.*
+
+### 🔗 Try it live at [https://hiretrack-70sl.onrender.com](https://hiretrack-70sl.onrender.com)
+
+> **Note:** Hosted on Render's free tier — the first load may take ~30 seconds if the service has been idle.
 
 ---
 
